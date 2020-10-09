@@ -1,0 +1,32 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// convertiamo i pixel in em: 1em = 16px
+@mixin respond($breakpoint) {
+    @if ($breakpoint == phone) {
+        @media only screen and (max-width: 22.5em) { @content } //360px
+    }
+    @if ($breakpoint == tabPort) {
+        @media only screen and (max-width: 48em) { @content } //768px
+    }
+    @if ($breakpoint == tabLand) {
+        @media only screen and (max-width: 64em) { @content } //1024px
+    }
+    @if ($breakpoint == smallDesktop) {
+        @media only screen and (max-width: 85.375em) { @content } //1366px
+    }
+    @if ($breakpoint == mediumDesktop) {
+        @media only screen and (max-width: 96em) { @content } //1536px
+    }
+    @if ($breakpoint == largeDesktop) {
+        @media only screen and (max-width: 120em) { @content } //1920px
+    }
+    @if ($breakpoint == bigDesktop) {
+        @media only screen and (min-width: 120.0625em) { @content } //1921px
+    }
+}

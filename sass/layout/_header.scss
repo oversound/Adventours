@@ -1,0 +1,40 @@
+.header {
+    height: 93vh;
+    background-image: linear-gradient(to right bottom, rgba($colorPrimaryLight, 0.4), rgba($colorPrimaryDark, 0.4)), url(../img/hero-small.jpg);
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    position: relative;
+
+    @media only screen and (min-resolution: 192dpi) and (min-width: 64em) {
+        background-image: linear-gradient(to right bottom, rgba($colorPrimaryLight, 0.4), rgba($colorPrimaryDark, 0.4)), url(../img/hero.jpg);
+    }
+
+    @include respond(tabPort) {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        height: 100vh;
+    }
+
+    &__logoBox {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+
+    &__textBox {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        @include respond(phone) {
+            top: 45%;
+        }
+    }
+}

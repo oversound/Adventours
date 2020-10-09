@@ -1,0 +1,30 @@
+/*
+    Tramite la prompt entra nella directory del progetto e digita il comando:
+        [1] npm run compile:sass -w (Per salvare in tempo reale le modifiche dal file sass -> css)
+        [2] live-server (Per creare una pagina web che mostra in tempo reale le modifiche del progetto)
+*/
+
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animation";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/bgVideo";
+@import "components/button";
+@import "components/card";
+@import "components/composition";
+@import "components/featureBox";
+@import "components/form";
+@import "components/story";
+
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/popup";
+
+@import "pages/home";

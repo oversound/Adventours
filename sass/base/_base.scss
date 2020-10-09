@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; /* browser default font size = 16px | 100% = 16px | 10px = 62.5% */
+    @include respond(bigDesktop) {
+        font-size: 70%;
+    }
+
+    @include respond(largeDesktop) {
+        font-size: 62.5%;
+    }
+
+    @include respond(mediumDesktop) {
+        font-size: 52%;
+    }
+
+    @include respond(smallDesktop) {
+        font-size: 48%;
+    }
+
+    @include respond(tabLand) {
+        font-size: 45%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem; /* 1rem = 10px */
+
+    @include respond(tabPort) {
+        padding: 0;
+    }
+}
+
+::selection {
+    background-color: $colorPrimary;
+    color: $colorWhite;
+}

@@ -1,0 +1,199 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    height: 52rem;
+    position: relative;
+
+    &__side {
+        height: 52rem;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        border-radius: 0.3rem;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($colorBlack, .2);
+        transition: all 1s ease;
+
+        &--front {
+            background-color: $colorWhite;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, rgba($colorSecondaryLight, 0.5), rgba($colorSecondaryDark, 0.5));
+            }
+
+            &-2 {
+                background-image: linear-gradient(to right bottom, rgba($colorPrimaryLight, 0.5), rgba($colorPrimaryDark, 0.5));
+            }
+
+            &-3 {
+                background-image: linear-gradient(to right bottom, rgba($colorTertiaryLight, 0.5), rgba($colorTertiaryDark, 0.5));
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+    // -------------------------------------------------------------------CardFront
+    &__picture {
+        background-size: cover;
+        height: 23rem;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, rgba($colorSecondaryLight, 0.5), rgba($colorSecondaryDark, 0.5)), url(../img/nat-5-min.jpg);
+
+            @media only screen and (min-resolution: 192dpi) and (min-width: 64em) {
+                background-image: linear-gradient(to right bottom, rgba($colorSecondaryLight, 0.5), rgba($colorSecondaryDark, 0.5)), url(../img/nat-5.jpg);
+            }
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, rgba($colorPrimaryLight, 0.5), rgba($colorPrimaryDark, 0.5)), url(../img/nat-6-min.jpg);
+
+            @media only screen and (min-resolution: 192dpi) and (min-width: 64em) {
+                background-image: linear-gradient(to right bottom, rgba($colorSecondaryLight, 0.5), rgba($colorSecondaryDark, 0.5)), url(../img/nat-6.jpg);
+            }
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, rgba($colorTertiaryLight, 0.5), rgba($colorTertiaryDark, 0.5)), url(../img/nat-7-min.jpg);
+
+            @media only screen and (min-resolution: 192dpi) and (min-width: 64em) {
+                background-image: linear-gradient(to right bottom, rgba($colorSecondaryLight, 0.5), rgba($colorSecondaryDark, 0.5)), url(../img/nat-7.jpg);
+            }
+        }
+    }
+
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $colorWhite;
+        position: absolute;
+        top: 12rem;
+        right: 3rem;
+        width: 65%;
+    }
+
+    &__headingSpan {
+        padding: 0.5rem 1rem;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+        border-radius: 0.3rem;
+        overflow: hidden;
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, rgba($colorSecondaryLight, 0.75), rgba($colorSecondaryDark, 0.75));
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, rgba($colorPrimaryLight, 0.75), rgba($colorPrimaryDark, 0.75));
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, rgba($colorTertiaryLight, 0.75), rgba($colorTertiaryDark, 0.75));
+        }
+    }
+
+    &__details {
+        padding: 3rem;
+
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $colorGreyLight2;
+                }
+            }
+        }
+    }
+    // -------------------------------------------------------------------CardBack
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    &__price-box {
+        text-align: center;
+        color: $colorWhite;
+        margin-bottom: 8rem;
+    }
+
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 200;
+    }
+    //------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------
+    @media only screen and (max-width: 48em), only screen and (hover: none) {
+        height: auto;
+        border-radius: 0.3rem;
+        box-shadow: 0 1.5rem 4rem rgba($colorBlack, .2);
+        background-color: $colorWhite;
+
+        &__side {
+            height: auto;
+            position: relative;
+            box-shadow: none;
+            transition: none;
+
+            &--back {
+                transform: rotateY(0);
+                clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        &:hover &__side--front {
+            transform: rotateY(0);
+        }
+
+        &__details {
+            padding: 0 3rem;
+        }
+        // -------------------------------------------------------------------CardBack
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            width: 100%;
+            padding: 7rem 4rem 4rem 4rem;
+        }
+
+        &__price-box {
+            margin-bottom: 3rem;
+        }
+
+        &__price-value {
+            font-size: 6rem;
+        }
+    }
+}

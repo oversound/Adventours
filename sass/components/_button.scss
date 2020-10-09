@@ -1,0 +1,69 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 3rem;
+        transition: all 0.2s;
+
+        border: none;
+        cursor: pointer;
+    }
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba($colorBlack,.4);
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba($colorBlack,.4);
+    }
+
+    &--white {
+        background-color: $colorWhite;
+        color: $colorGreyDark;
+    }
+
+    &--green {
+        background-image: linear-gradient(to right, $colorPrimaryLight, $colorPrimaryDark);
+        color: $colorWhite;
+    }
+
+    &--animated {
+        animation: moveInBottom 1.2s ease-out 1.2s;
+        animation-fill-mode: backwards; /* applica la hidden all'inizio dell'animazione */
+    }
+}
+
+.btnText {
+    &:link,
+    &:visited {
+        font-size: 1.6rem;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.2s;
+        color: $colorPrimary;
+        padding: 0.5rem 1.5rem;
+        border: 0.1rem solid $colorPrimary;
+    }
+
+    &:hover {
+        background-image: linear-gradient(to right, $colorPrimaryLight, $colorPrimaryDark);
+        color: $colorWhite;
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba($colorBlack,.25);
+    }
+
+    &:active {
+        transform: translateY(-0.1rem);
+        color: $colorWhite;
+        box-shadow: 0 0.5rem 1rem rgba($colorBlack,.25);
+    }
+}
